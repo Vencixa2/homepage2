@@ -22,7 +22,7 @@ SEARCH
     padding: 0 40px 0 40px;
     height: 50px;
     width: 500px;
-    font-weight: 500;
+    font-weight: 400;
 }
 .search-bar:focus {
     outline: none;
