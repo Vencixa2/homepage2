@@ -1,11 +1,24 @@
 body {
     font-family: "Roboto", sans-serif;
     overflow: hidden;
-}
-body.dark {
     background-color: #0f0f12;
 }
-
+@media only screen and (max-width: 900px) {
+    h1{
+        margin-top:50px;
+        font-size:100px;
+    }
+}
+@media only screen and (max-width: 600px) {
+    h1{
+        margin-top:50px;
+        font-size:75px;
+    }
+    .bookmarks i{
+    margin:0 15px;
+    }
+}
+ 
 /*
 
 SEARCH
@@ -20,14 +33,18 @@ SEARCH
     background: none;
     border: none;
     border-bottom: 2px solid gray;
+    color: #bababa;
     padding: 0 40px 0 40px;
     height: 50px;
     width: 500px;
     font-weight: 500;
+    font-size: 18px;
 }
 .search-bar:focus {
     outline: none;
-    border-bottom: 2px solid black;
+    border-bottom: 2px solid #fff;
+    color: #fff;
+
 }
 
 /*
@@ -40,13 +57,24 @@ BOOKMARKS
     text-align: center;
     transform: scale(2.5);
     margin-top: 50px;
+    outline: 1px solid #fff;
+    width: 150px;
+    position: absolute;
+    left: calc(50% - 75px);
+    padding-top: 2.5px;
+    border-radius: 10px;
 }
 a {
     text-decoration: none;
     color: #000;
 }
 #bookmark {
-    margin-right: 10px;
+    color: #fff;
+}
+.fa-youtube,
+.fa-envelope,
+.fa-x-twitter {
+    margin-right: 15px;
 }
 
 /*
@@ -60,106 +88,72 @@ FOOTER
     bottom: 10px;
     right: 10px;
 }
-.fa-bars {
-    transform: scale(2);
-    cursor: pointer;
-}
 
 /*
 
-Popup
+Spotify
 
 */
 
-.popup {
+.spotify-wrapper {
     position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-.popup-content.active {
+    bottom: 100px;
+    left: 20px;
+    height: 400px;
+    width: 400px;
     transition: all 200ms ease-in-out;
-    transform: scale(1);  
-}
-.dark-mode {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-}
-.popup-content {
-    transition: all 200ms ease-in-out;
+    transform-origin: bottom left;
     transform: scale(0);
-    background: #dbdbdb;
-    border: 3px solid #000;
-    width: 280px;
-    padding: 0 10px 0 10px;
-    border-radius: 10px;
-    height: 100%;
 }
-.fas {
-    position: relative;
-    top: 25%;
-    transform: scale(1.5);
+.spotify-wrapper.active {
+    transition: transform 200ms ease-in-out;
+    transform: scale(1);
 }
-.close-popup {
+.spotify-playlist {
     position: absolute;
-    background: #fff;
-    border: 3px solid #000;
-    border-radius: 10px;
-    height: 35px;
-    width: 35px;
-    text-align: center;
-    bottom: 35px;
-    left: 275px;
+    width: 400px;
+    height: 400px;
+}
+.spotify-button {
+    background-image: url(images/spotify.png);
+    background-size: 100%;
+    background-color: #0f0f12;
+    border: none;
+    position: absolute;
+    bottom: 100px;
+    box-shadow: rgba(6, 187, 12, 0.3) 0px 3px 5px -1px, rgba(4, 232, 57, 0.14) 0px 6px 10px 0px, rgba(25, 248, 0, 0.12) 0px 1px 18px 0px;
+    border-radius: 50%;
+    left: 20px;
+    width: 56px;
+    height: 56px;
     cursor: pointer;
 }
-
+.spotify-button.active {
+    transform: scale(0);
+}
+.fa-times {
+    color: #fff;
+    position: absolute;
+    left: 335px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.fa-times.active {
+    transition: none 200ms ease-in-out;
+    transform: scale(2);
+}
 
 /*
 
-Slider
+Clock
 
 */
 
-.switch {
-    position: absolute;
-    display: inline-block;
-    top: 14px;
-    left: 150px;
-    width: 60px;
-    height: 34px;
-    border: 3px solid #000;
-    border-radius: 34px;
+span {
+    color: white;
 }
-.switch input {
-    display: none;
-}
-.slider {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-} 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 26px;
-    width: 26px;
-    left: 4px;
-    bottom: 4px;
-    background-color: white;
-    transition: .4s;
-    border-radius: 34px;
-}
-  
-input:checked + .slider {
-    background-color: #383838;
-}
-input:checked + .slider:before {
-    transform: translateX(26px);
+.clock {
+    text-align: center;
+    margin-top: -100px;
+    font-size: 24px;
 }

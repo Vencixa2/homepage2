@@ -10,6 +10,16 @@
         <link rel="stylesheet" href="style.css">
         <script src="https://kit.fontawesome.com/eade4dcf70.js" crossorigin="anonymous"></script>
 
+        <script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+
+            const button = new Crate({
+                server: '1178678624065433691', // Opasnite
+                channel: '1178678624065433693', // #общи          
+                location: ["bottom", "left"]
+            })
+
+        </script>
+        
         <!--Fonts-->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,40 +36,48 @@
         </form>
 
         <!--Bookmarks-->
-        <div class="bookmark-container">
 
-            <a href="https://www.youtube.com" id="bookmark" target="_blank"><i class="fa-brands fa-youtube"></i></a>
-            <a href="https://mail.google.com/mail/u/1/#inbox" id="bookmark" target="_blank"><i class="fa-solid fa-envelope"></i></a>
-            <a href="https://twitter.com/?lang=en" id="bookmark" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
+        <div class="bookmark-container" id="bookmarks">
+
+            <a href="https://www.youtube.com" id="bookmark" target="_blank"><i class="fa-brands fa-youtube"></i></a><!--
+            --><a href="https://mail.google.com/mail/u/1/#inbox" id="bookmark" target="_blank"><i class="fa-solid fa-envelope"></i></a><!--
+            --><a href="https://twitter.com/?lang=en" id="bookmark" target="_blank"><i class="fa-brands fa-x-twitter"></i></a><!--
+            --><a href="https://www.instagram.com/" id="bookmark" target="_blank"><i class="fa-brands fa-instagram"></i></a>
 
         </div>
 
-        <!--Popup-->
+        <!--Clock-->
 
-        <div>
-            <div class="popup" id="popup">
-                <div class="popup-content" id="content">
-                    <h4>Dark Mode</h4>
-                    <label class="switch">
-                        <input type="checkbox" id="slider" onclick="changeBackground()">
-                        <span class="slider round"></span>
-                    </label>
-                    <div class="close-popup" onclick="togglePopup()">                
-                        <i class="fas fa-times"></i>
-                    </div>  
-                </div>
-            </div>
+        <div class="clock" id="clock">
+                
+            <span id="hrs">00</span>
+            <span>:</span>
+            <span id="mins">00</span>
+            <span>:</span>
+            <span id="secs">00</span>
+            
+        </div>           
+
+        <button class="spotify-button" id="spotify-button" onclick="togglePopup()"></button>
+
+        <div class="spotify-wrapper" id="spotify">
+
+            <iframe class="spotify-playlist" style="border-radius:12px" src="https://open.spotify.com/embed/playlist/1kBOkFPOIGk7O3Gq7DYTML?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+           
+            <i class="fas fa-times" onclick="togglePopup()" id="close-spotify"></i> 
+
         </div>
+
         <script src="myScript.js" async defer></script>
         <script src="popup.js" async defer></script>
 
     </body>
 
     <footer>
+
         <div class="footer-content">
 
-            <i class="fa-solid fa-bars" onclick="togglePopup()"></i>
-
         </div>
+
     </footer>
-</html>
+</html> 
